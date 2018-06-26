@@ -149,6 +149,8 @@
             <li><a href="#rename-library">Rename Library</a></li>
             <li><a href="#transfer-library">Transfer Library</a></li>
             <li><a href="#decrypt-library">Decrypt Library</a></li>
+            <li><a href="#decrypt-library-2">Decrypt Library V2</a></li>
+            <li><a href="#change-decrypt-library-password">Change Decrypt Library's Password</a></li>
             <li><a href="#create-public-lib">Create Public Library</a></li>
             <li><a href="#set-exist-lib-as-public-lib">Set Exist Lib as Public Library</a></li>
             <li><a href="#remove-public-lib">Remove Public Library</a></li>
@@ -2876,6 +2878,73 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 400 Incorrect password
 * 409 Repo is not encrypt
 * 500 Internal server error
+
+### <a id="decrypt-library-2"></a>Decrypt Library V2
+
+**POST** https://prebox.alphalawyer.cn/api/v2.1/repos/{repo_id}/set-password/
+
+**Request parameters**
+
+* `repo_id`
+* `password`
+
+**Sample request**
+
+```
+curl -d "password=11111111" -H 'Authorization: Token 43f9c0f880d4906d38c0e678734aa6da75a0d244' -H 'Accept: application/json; indent=4' https://prebox.alphalawyer.cn/api/v2.1/repos/0b5beac5-b67c-45ea-a7d3-460f11f6f35e/set-password/
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 password invalid.
+* 400 Bad arguments
+* 400 Wrong password
+* 400 Library is not encrypted.
+* 403 Permission denied.
+* 404 Library not found.
+* 500 Internal Server Error
+* 500 Decrypt library error
+
+### <a id="change-decrypt-library-password"></a>Change Decrypt Library's Password
+
+**PUT** https://prebox.alphalawyer.cn/api/v2.1/repos/{repo_id}/set-password/
+
+**Request parameters**
+
+* `repo_id`
+* `old_password`
+* `new_password`
+
+**Sample request**
+
+```
+curl -X PUT -d "old_password=11111111&new_password=22222222" -H 'Authorization: Token 43f9c0f880d4906d38c0e678734aa6da75a0d244' -H 'Accept: application/json; indent=4' https://prebox.alphalawyer.cn/api/v2.1/repos/0b5beac5-b67c-45ea-a7d3-460f11f6f35e/set-password/
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 operation/old_password/new_password invalid.
+* 400 Library is not encrypted.
+* 403 Permission denied.
+* 403 Wrong old password.
+* 404 Library not found.
+* 500 Internal Server Error
 
 ### <a id="create-public-lib"></a>Create Public Library
 
