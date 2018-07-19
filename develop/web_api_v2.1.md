@@ -3052,6 +3052,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         {
             "repo_id": "040a8aad-5646-4c68-ba8a-73f90c60089f",
             "name": "seafile \u8fd0\u7ef4.docx",
+            "repo_encrypted": False,
             "permission": "r",
             "oid": "ecba7db3d6b818873bf94cb1f2161f6a0fc22494",
             "last_modified": 1482910730,
@@ -3065,6 +3066,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         {
             "repo_id": "233191c7-8e33-4fd2-b0a3-e480363d8e0d",
             "name": "seafile-tutorial.doc",
+            "repo_encrypted": False,
             "permission": "rw",
             "oid": "1066014004ad479dd7f3cc0a12462c3f1fd2edeb",
             "last_modified": 1389771193,
@@ -3078,6 +3080,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         {
             "repo_id": "233191c7-8e33-4fd2-b0a3-e480363d8e0d",
             "name": "seafile_vm.md",
+            "repo_encrypted": False,
             "permission": "rw",
             "oid": "66c8dbe139333ead26b4878340da486fffdc5330",
             "last_modified": 1439277140,
@@ -3108,6 +3111,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
                 "repo_owner_name": "admin",
                 "repo_id": "2628a63b-cfad-41f5-a748-392ec9287686",
                 "name": "3a",
+                "repo_encrypted": False,
                 "repo_owner_contact_email": "admin@admin.com",
                 "repo_owner_email": "admin@admin.com",
                 "last_modified": 1520836447,
@@ -3121,6 +3125,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
                 "repo_owner_name": "admin",
                 "repo_id": "2628a63b-cfad-41f5-a748-392ec9287686",
                 "name": "1a",
+                "repo_encrypted": False,
                 "repo_owner_contact_email": "admin@admin.com",
                 "repo_owner_email": "admin@admin.com",
                 "last_modified": 1520836462,
