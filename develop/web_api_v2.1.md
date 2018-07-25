@@ -316,6 +316,12 @@
         </ul>
     </li>
     <li>
+        <a href="#admin-only-file">File</a>
+        <ul>
+            <li><a href="#admin-only-get-file-detail">Get File Detail</a></li>
+        </ul>
+    </li>
+    <li>
         <a href="#admin-only-shares">Shares</a>
         <ul>
             <li><a href="#admin-only-get-repo-user-shares">Get Repo User Shares</a></li>
@@ -6149,6 +6155,45 @@ curl -X DELETE -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17
 **Errors**
 
 * 403 Permission error, only administrator can perform this action
+* 500 Internal Server Error
+
+## <a id="admin-only-file"></a>File
+
+### <a id="admin-only-get-file-detail"></a>Get File Detail
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/libraries/{repo_id}/file/detail/?path={path}
+
+**Request parameters**
+
+* repo_id
+* path
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token e55ec9lajsfieasdfaljsasdfjlweac1494ffb29' -H 'Accept: application/json; indent=4' https://prebox.alphalawyer.cn/api/v2.1/admin/libraries/8c7053f7-e15b-479e-b145-9e2e6465ad38/file/detail/?path=/lian.md
+```
+
+**Sample response**
+
+```
+{
+    "last_modifier_name": "\u8d85\u7ba1",
+    "name": "lian.md",
+    "last_modified": "2018-07-25T16:16:32+08:00",
+    "mtime": 1532506592,
+    "size": 0,
+    "id": "ed9add3cb8a3ae49d327483edf85ef7d4fb0de31",
+    "last_modifier_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modifier_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com"
+}
+```
+
+**Errors**
+
+* 400 path invalid.
+* 404 Library not found.
+* 404 File not found.
 * 500 Internal Server Error
 
 ## <a id="admin-only-shares"></a>Shares
